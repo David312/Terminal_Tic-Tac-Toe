@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Board.h"
 
+using namespace std;
+
 Board::Board(){
   int i,j;
   for(i=0;i<3;i++){
@@ -16,15 +18,31 @@ int Board::getNumFilled(){
 }
 
 bool Board::hasRow(){
-  return false;//TODO: Implement function
+  int i;
+  for(i=0;i<3;i++){
+    if(board[i][0].getMark()==board[i][1].getMark() && 
+       board[i][0].getMark()==board[i][2].getMark())
+      return true;
+  }
+  return false;
 }
 
 bool Board::hasColumn(){
-  return false;//TODO: Implement function
+  int i;
+  for(i=0;i<3;i++){
+    if(board[0][i].getMark()==board[1][i].getMark() && 
+       board[0][i].getMark()==board[2][i].getMark())
+      return true;
+  }
+  return false;
 }
 
 bool Board::hasDiagonal(){
-  return false;//TODO: Implement function
+  return 
+    board[0][0].getMark()==board[1][1].getMark() &&
+    board[0][0].getMark()==board[2][2].getMark() ||
+    board[2][0].getMark()==board[1][1].getMark() &&
+    board[2][0].getMark()==board[0][2].getMark();
 }
 
 bool Board::hasWinner(){
@@ -37,8 +55,16 @@ int Board::fillSquare(Mark m,int posx,int posy){
   if(board[posx][posy].getMark()!=EMPTY)
     return -1;
   board[posx][posy].setMark(m);
+  return 0;
 }
 
 void Board::print(){
-  //TODO: Implement function
+  int i,j;
+  for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+      board[i][j].print();
+      if(j==2)
+	cout<<endl;
+    }
+  }
 }

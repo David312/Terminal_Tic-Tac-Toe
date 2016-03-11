@@ -19,6 +19,6 @@ class Board{
   void print();// draws the board
 
 
-}
+};
 
 #endif
