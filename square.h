@@ -1,8 +1,9 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-enum Mark={X,O,EMPTY,ERROR};
-
+namespace Square{
+typedef enum Mark={X,O,EMPTY,ERROR};
+}
 class Square{
   Mark value;
 
@@ -10,6 +11,7 @@ class Square{
   Square();
   Square(Mark);
   void print();
-  void setMark(Mark m);
+  void setMark(Mark);
   Mark getMark(){return value;}
 }
+

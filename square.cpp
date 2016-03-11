@@ -22,11 +22,15 @@ Mark Square::getMark(){
 void Square::print(){
   char c;
   switch(this->value){
-  case X:c='X'; break;
-  case O:c='O'; break;
-  case EMPTY:c=' ';break;
+  case X:
+    c='X'; break;
+  case O:
+    c='O'; break;
+  case EMPTY:
+    c=' ';break;
   case ERROR:
-  default:c='E';
+  default:
+    c='E';
   };
   cout<<"["<<c<<"]";
 }

@@ -1,0 +1,46 @@
+#include <iostream>
+
+
+#include "Board.h"
+
+
+Board::Board(){
+  int i,j;
+  for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+      board[i][j];// call default constructor
+    }
+  }
+  this->numFilled=0;
+}
+
+Board::getNumFilled(){
+  return this->numFilled;
+}
+
+Board::hasRow(){
+  return false;
+}
+
+Board::hasColumn(){
+  return false;
+}
+
+Board::hasDiagonal(){
+  return false;
+}
+
+Board::hasWinner(){
+  if(this->numFilled < 5)
+    return false;
+  return hasRow()||hasColumn()||hasDiagonal();
+}
+
+Board::fillSquare(Mark m,int posx,int posy){
+  if(
+  board[posx][posy].setMark(m);
+
+  }
+Board::print(){
+
+}
