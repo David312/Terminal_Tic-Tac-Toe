@@ -2,7 +2,7 @@ EXE = p1
 
 SRCDIR = src
 
-OBJS = Square.o Board.o Score.o
+OBJS = Square.o Board.o Score.o Game.o
 DEBUG = -g
 CC = g++
 CFLAGS = -Wall $(DEBUG) -c
@@ -20,6 +20,9 @@ Board.o: $(SRCDIR)/Board.cpp $(SRCDIR)/Board.h $(SRCDIR)/Square.h
 
 Score.o: $(SRCDIR)/Score.cpp $(SRCDIR)/Score.h
 	$(CC) $(CFLAGS) $(SRCDIR)/Score.cpp
+
+Game.o: $(SRCDIR)/Game.cpp $(SRCDIR)/Score.h $(SRCDIR)/Board.h
+	$(CC) $(CFLAGS) $(SRCDIR)/Game.cpp
 
 clean:
 	rm *.o *~ $(EXE) 2> /dev/null

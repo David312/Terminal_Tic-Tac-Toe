@@ -9,10 +9,11 @@ class Square{
 
  public:
   Square();
-  Square(Mark);
+  Square(Mark);//maybe not needed
   void print();
   void setMark(Mark);
   Mark getMark();
+  void reset();
 };
 
 #endif

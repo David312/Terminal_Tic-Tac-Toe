@@ -7,7 +7,7 @@ Board::Board(){
   int i,j;
   for(i=0;i<3;i++){
     for(j=0;j<3;j++){
-      board[i][j];// call default constructor
+      board[i][j];// call default constructor??
     }
   }
   this->numFilled=0;
@@ -65,6 +65,15 @@ void Board::print(){
       board[i][j].print();
       if(j==2)
 	cout<<endl;
+    }
+  }
+}
+
+void Board::reset(){
+  int i,j;
+  for(i=0;i<3;i++){
+    for(j=0;j<3;j++){
+      board[i][j].reset();
     }
   }
 }

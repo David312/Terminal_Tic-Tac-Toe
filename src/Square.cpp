@@ -34,3 +34,7 @@ void Square::print(){
   };
   cout<<"["<<c<<"]";
 }
+
+void Square::reset(){
+  this->value=EMPTY;
+}

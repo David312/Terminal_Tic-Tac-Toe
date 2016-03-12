@@ -17,7 +17,7 @@ class Board{
   bool hasWinner();// true if there is a winner
   int fillSquare(Mark,int,int);// returns -1 if already filled or error
   void print();// draws the board
-
+  void reset();
 
 };
 
