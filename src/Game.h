@@ -13,21 +13,19 @@ class Game{
   Score sc;
   Turn t;
   State st;
-  char getKey();
-  void prompt();
-  void process();
-
-
-
+  int posx;//current x position on the board
+  int posy;//current y position on the board
+  void getKey();
+  void promptKey();
+  int askForPlayingAgain();
+  void print();
+  void newGame();
 
 
  public:
   Game();
-  void print();
-  void newGame();
-  void start();
+  int start();
   
-
 };
 
 

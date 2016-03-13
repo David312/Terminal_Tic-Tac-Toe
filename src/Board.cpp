@@ -13,6 +13,11 @@ Board::Board(){
   this->numFilled=0;
 }
 
+void Board::setPos(int oldx,int oldy,int newx,int newy){
+  board[oldx][oldy].unpoint();
+  board[newx][newy].point();
+}
+
 int Board::getNumFilled(){
   return this->numFilled;
 }
@@ -48,13 +53,13 @@ bool Board::hasDiagonal(){
 bool Board::hasWinner(){
   if(this->numFilled < 5)
     return false;
-  return hasRow()||hasColumn()||hasDiagonal();
+  return hasRow() || hasColumn() || hasDiagonal();
 }
 
-int Board::fillSquare(Mark m,int posx,int posy){
-  if(board[posx][posy].getMark()!=EMPTY)
+int Board::fillSquare(Mark m,int x,int y){
+  if(board[x][y].getMark()!=EMPTY)
     return -1;
-  board[posx][posy].setMark(m);
+  board[x][y].setMark(m);
   return 0;
 }
 
@@ -76,4 +81,9 @@ void Board::reset(){
       board[i][j].reset();
     }
   }
+  board[0][0].point();
+}
+
+bool Board::itsADraw(){
+  return this->numFilled==9;
 }

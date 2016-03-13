@@ -5,10 +5,12 @@ using namespace std;
 
 Square::Square(){
   this->value=EMPTY;
+  this->pointed=false;
 }
 
 Square::Square(Mark m){
   this->value=m;
+  this->pointed=false;
 }
 
 void Square::setMark(Mark m){
@@ -21,6 +23,7 @@ Mark Square::getMark(){
 
 void Square::print(){
   char c;
+  char m=' ';
   switch(this->value){
   case X:
     c='X'; break;
@@ -32,9 +35,20 @@ void Square::print(){
   default:
     c='E';
   };
-  cout<<"["<<c<<"]";
+  if(pointed==true)
+    m='>';
+  cout<<"["<<m<<c<<"]";
 }
 
 void Square::reset(){
   this->value=EMPTY;
+  this->pointed=false;
+}
+
+void Square::point(){
+  this->pointed=true;
+}
+
+void Square::unpoint(){
+  this->pointed=false;
 }
